@@ -1,0 +1,32 @@
+# 改行コードの統一
+# Mac / Windows のどちらでクローンしても、リポジトリ内は常に LF で保存される。
+# Git for Windows の core.autocrlf 設定に左右されず、OS 間で差分が出ない。
+* text=auto eol=lf
+
+# シェルスクリプトは必ず LF（CRLF だとサーバー上で実行できない）
+*.sh text eol=lf
+
+# Windows 専用ファイルは CRLF のまま扱う
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# バイナリは改行変換の対象外にする
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.webp binary
+*.mp4  binary
+*.zip  binary
+*.pdf  binary
+*.woff  binary
+*.woff2 binary
+*.ttf  binary
+*.otf  binary
+*.eot  binary
+
+# 差分表示を読みやすくする
+*.php  diff=php
+*.css  diff=css
+*.scss diff=css
